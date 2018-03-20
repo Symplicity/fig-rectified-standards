@@ -102,7 +102,7 @@ if ($this->foo() === null) {
 ```
 
 ### Comparison methods
-Consistenty is key here. The project should use one througout the code. In general stick to the short version.
+Consistently is key here. The project should use one througout the code. In general stick to the short version.
 
 `is_int()` should be used instead of `is_integer()`.
 Use `is_writable()` instead of `is_writeable()`.
@@ -241,7 +241,7 @@ thus reducing overhead in work and making diffs easier to read as they only show
 ## Typehinting
 Arguments that expect objects, arrays or callbacks (callable) can be typehinted:
 ```php
-public function foo(Model $model, array $array, callable $callback, $boolean)
+public function foo(Model $model, array $array, callable $callback)
 {
 }
 ```
@@ -317,9 +317,8 @@ The `@package` and `@subpackage` annotations are not used.
 ## Writing better code
 
 * Try to accept and return as few types as possible (mixing integer, boolean, string, array, object etc is usually not too good)
-* Try to return early in methods/functions to avoid unnecessary depths
+* Try to avoid unnecessary depth
 
-### Example for return early
 ```php
 // Bad.
 public function foo($input, $anotherInput = null)
